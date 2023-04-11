@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/example.json",
+    "title": "argocd-schema",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "apiVersion": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            }
+          }
+        },
+        "spec": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "type": "string"
+            },
+            "source": {
+              "type": "object",
+              "properties": {
+                "repoURL": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "destination": {
+              "type": "object",
+                "properties": {
+                    "server": {
+                    "type": "string"
+                    }
+                }
+            }
+          }   
+        }
+    }
+}
