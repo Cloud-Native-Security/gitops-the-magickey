@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Cloud-Native-Security/gitops-the-magickey
-    path: helm-website
+    path: manifests
     directory:
       recurse: true
   destination:
