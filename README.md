@@ -22,10 +22,25 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 Access the password for the UI
 ```
-argocd admin initial-password -n argocd
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
+Port-forwards the ArgoCD service:
+```
+kubectl port-forward svc/argocd-server -n argocd 8000:443
+```
+
+Log into ArgoCD
+```
+argocd login localhost:8000
 ```
 
 ## Scanning the Helm manifest and other deployment resources
+
+Scan the container image used:
+```
+trivy config Dockerfile
+```
 
 Scan the container image used:
 ```
@@ -33,7 +48,6 @@ trivy image anaisurlichs/cns-website:0.1.1
 ```
 
 Scan the Helm Chart to be deployed:
-
 ```
 trivy config ./helm-website --severity MEDIUM
 ```
@@ -49,6 +63,4 @@ trivy config --policy ./policies ./application-argocd.yaml
 ```
 kubectl apply -f argocd
 ```
-
-## An ArgoCD Codefresh Pipeline
 

@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Cloud-Native-Security/website
-    path: cns-website
+    repoURL: https://github.com/Cloud-Native-Security/gitops-the-magickey
+    path: helm-website
     directory:
       recurse: true
   destination:
