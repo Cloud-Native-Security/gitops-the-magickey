@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Cloud-Native-Security/gitops-the-magickey
+    repoURL: https://github.com/Cloud-Native-Security/website
     path: manifests
     directory:
       recurse: true
