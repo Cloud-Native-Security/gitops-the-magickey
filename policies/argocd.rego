@@ -1,6 +1,6 @@
 # METADATA
-# title: "Applications only allowed"
-# description: "Only applications are allowed to run"
+# title: "Applications not allowed"
+# description: "Only applications are allowed to be defined"
 # scope: package
 # schemas:
 # - input: schema["argocd"]
@@ -11,7 +11,7 @@
 #   avd_id: AVD-ARGO-0001
 #   severity: HIGH 
 #   short_code: application-only-allowed 
-#   recommended_action: "Identify application resource"
+#   recommended_action: "Only applications are allowed"
 #   input:
 #     selector:
 #     - type: kubernetes
@@ -20,7 +20,7 @@ package user.argocd.ID001
 
 import input
 
-allow[msg] {
-	input.kind == "Application"
-	msg = sprintf("Found Application '%s' resource", [input.metadata.name])
+deny[msg] {
+	input.kind != "Test"
+	msg = sprintf("Found ArgoCD Application '%s' but the kind is not named correctly", [input.metadata.name])
 }
