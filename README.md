@@ -55,7 +55,7 @@ trivy config ./helm-website --severity MEDIUM
 ## Scanning the custom ArgoCD Application Deployment
 
 ```
-trivy config --policy ./policies ./application-argocd.yaml 
+trivy config --policy ./policies ./argocd/application-argocd.yaml 
 ```
 
 ## Installing the application through ArgoCD
