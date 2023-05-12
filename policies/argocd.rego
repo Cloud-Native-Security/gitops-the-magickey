@@ -21,6 +21,6 @@ package user.argocd.ID001
 import input
 
 deny[msg] {
-	input.kind != "Test"
+	input.kind != "Application"
 	msg = sprintf("Found ArgoCD Application '%s' but the kind is not named correctly", [input.metadata.name])
 }
