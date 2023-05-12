@@ -11,6 +11,9 @@ Relevant documentation:
 * Trivy 
 * Helm
 
+This repository has been used in the following presentation at ArgoCon EU 2023:
+[GitOps - The Magic Key to Cloud Native Security - Anais Urlichs, Aqua Security](https://youtu.be/nGcvPAQdpVg)
+
 ## Installing ArgoCD inside the Kuberneres cluster
 
 Install ArgoCD inside of the cluster
