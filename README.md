@@ -8,8 +8,8 @@ The custom ArgoCD manifest
 
 Relevant documentation:
 * ArgoCD https://argo-cd.readthedocs.io/en/stable/getting_started/
-* Trivy 
-* Helm
+* Trivy https://github.com/aquasecurity/trivy
+* Helm https://github.com/helm 
 
 This repository has been used in the following presentation at ArgoCon EU 2023:
 [GitOps - The Magic Key to Cloud Native Security - Anais Urlichs, Aqua Security](https://youtu.be/nGcvPAQdpVg)
