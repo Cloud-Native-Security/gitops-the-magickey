@@ -75,5 +75,5 @@ trivy config --policy ./policies --namespaces user ./argocd/application-deployme
 kubectl apply -f argocd
 ```
 
-
+![](assets/argoUI.png)
 
