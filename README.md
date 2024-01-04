@@ -52,7 +52,15 @@ trivy image anaisurlichs/cns-website:0.1.1
 
 Scan the Helm Chart to be deployed:
 ```
-trivy config ./helm-website --severity MEDIUM
+trivy config ./manifests --severity MEDIUM
+```
+
+### Run the container image
+
+The container image can be run with the following command:
+
+```
+docker run -p 8080:80 anaisurlichs/cns-website:0.1.1
 ```
 
 ## Scanning the custom ArgoCD Application Deployment
@@ -66,4 +74,6 @@ trivy config --policy ./policies --namespaces user ./argocd/application-deployme
 ```
 kubectl apply -f argocd
 ```
+
+
 
