@@ -5,7 +5,7 @@
 # schemas:
 # - input: schema["argocd"]
 # related_resources:
-# - https://google.ca
+# - https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/
 # custom:
 #   id: ID001 
 #   avd_id: AVD-ARGO-0001
@@ -23,4 +23,9 @@ import input
 deny[msg] {
 	input.kind != "Application"
 	msg = sprintf("Found ArgoCD Application '%s' but the kind is not named correctly", [input.metadata.name])
+}
+
+deny[msg] {
+	input.metadata.name != "website"
+	msg = sprintf("Found ArgoCD Application '%s' but the name is not correct", [input.metadata.name])
 }

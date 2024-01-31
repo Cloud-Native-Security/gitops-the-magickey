@@ -18,7 +18,7 @@ This repository has been used in the following presentation at ArgoCon EU 2023:
 
 ## Installing ArgoCD inside the Kuberneres cluster
 
-Install ArgoCD inside of the cluster
+[Install ArgoCD inside of the cluster](https://argo-cd.readthedocs.io/en/stable/getting_started/)
 
 ```
 kubectl create namespace argocd
@@ -40,16 +40,16 @@ Log into ArgoCD
 argocd login localhost:8000
 ```
 
+Once ArgoCD installed, the password can be updated with the following command:
+```
+argocd account update-password
+```
+
 ## Scanning the Helm manifest and other deployment resources
 
 Scan the container image used:
 ```
-trivy config Dockerfile
-```
-
-Scan the container image used:
-```
-trivy image anaisurlichs/cns-website:0.1.1
+trivy image anaisurlichs/cns-website:0.2.1
 ```
 
 Scan the Helm Chart to be deployed:
@@ -62,7 +62,7 @@ trivy config ./manifests --severity MEDIUM
 The container image can be run with the following command:
 
 ```
-docker run -p 8080:80 anaisurlichs/cns-website:0.1.1
+docker run -p 8080:80 anaisurlichs/cns-website:0.2.1
 ```
 
 ## Scanning the custom ArgoCD Application Deployment

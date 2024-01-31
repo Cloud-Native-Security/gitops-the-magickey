@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Cloud-Native-Security/website
-    path: manifests
+    path: deploy
     directory:
       recurse: true
   destination:
